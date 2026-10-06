@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/data/siteConfig";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
@@ -66,8 +67,15 @@ export function Header() {
             className="flex items-center gap-2.5 group focus-visible:outline-2 focus-visible:outline-brand-600 rounded-lg p-1 shrink-0"
             aria-label={`${siteConfig.brandName} - Trang chủ`}
           >
-            <div className="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black text-xl shadow-md group-hover:bg-brand-700 transition-colors">
-              🚗
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden shadow-xs shrink-0 border border-slate-200 bg-white group-hover:scale-105 transition-transform">
+              <Image
+                src="/images/logo.jpg"
+                alt="Logo Thầy Toàn Dạy Lái Xe"
+                width={44}
+                height={44}
+                className="w-full h-full object-cover"
+                priority
+              />
             </div>
             <div className="flex flex-col">
               <span className="text-base sm:text-lg font-black text-slate-900 tracking-tight leading-tight group-hover:text-brand-600 transition-colors whitespace-nowrap">

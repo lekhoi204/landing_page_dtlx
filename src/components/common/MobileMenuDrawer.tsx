@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from "next/image";
 import { siteConfig } from "@/data/siteConfig";
 import { Button } from "@/components/ui/Button";
 import { X, Phone, MessageSquare, ShieldCheck, ChevronRight } from "lucide-react";
@@ -52,8 +53,14 @@ export function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerProps) {
         <div>
           <div className="flex items-center justify-between p-4 border-b border-slate-100">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                🚗
+              <div className="w-10 h-10 rounded-full overflow-hidden shadow-xs shrink-0 border border-slate-200 bg-white">
+                <Image
+                  src="/images/logo.jpg"
+                  alt="Logo Thầy Toàn Dạy Lái Xe"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-slate-900 text-sm leading-tight">

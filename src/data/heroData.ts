@@ -37,8 +37,8 @@ export const heroData: HeroData = {
     {
       id: "modern-fleet",
       icon: "Car",
-      title: "100% xe tập đời mới",
-      description: "Vios, Accent, Fadil có máy lạnh, trợ lực lái êm ái, an toàn",
+      title: "Xe tập lái đời mới",
+      description: "Xe đời mới sạch sẽ, trang bị máy lạnh, trợ lực lái êm ái, an toàn",
     },
   ],
   quickStats: [

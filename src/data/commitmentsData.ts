@@ -53,7 +53,7 @@ export const commitmentsData: CommitmentsData = {
       keyPoints: [
         "100% thời gian buổi học bạn trực tiếp cầm lái",
         "Giáo viên ngồi ghế phụ kèm cặp, chỉnh sửa từng động tác",
-        "Tập lái trên xe đời mới sạch sẽ, máy lạnh mát rượi",
+        "Tập lái trên xe đời mới sạch sẽ, trang bị máy lạnh đầy đủ",
         "Được đổi giáo viên nếu cảm thấy không hợp phong cách dạy",
       ],
       icon: "UserCheck",

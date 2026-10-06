@@ -1,16 +1,10 @@
+"use client";
+
 import React from "react";
 import { VideoTip } from "@/types/tips";
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
-import {
-  Play,
-  Clock,
-  ExternalLink,
-  CheckCircle2,
-  Sparkles,
-  Eye,
-} from "lucide-react";
+import { Play, Clock, Eye, ExternalLink } from "lucide-react";
 
 interface VideoCardProps {
   tip: VideoTip;
@@ -22,9 +16,9 @@ export function VideoCard({ tip, onPlay, className }: VideoCardProps) {
   const isTikTok =
     tip.platform === "tiktok" || tip.youtubeUrl?.includes("tiktok.com");
 
-  const handlePlayClick = (e: React.MouseEvent) => {
+  const handlePlay = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (onPlay) {
-      e.preventDefault();
       onPlay(tip);
     }
   };
@@ -40,7 +34,7 @@ export function VideoCard({ tip, onPlay, className }: VideoCardProps) {
       <div>
         {/* Visual Thumbnail Area with Play Button */}
         <div
-          onClick={handlePlayClick}
+          onClick={handlePlay}
           className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-brand-950 p-6 sm:p-7 text-white overflow-hidden aspect-video flex flex-col justify-between cursor-pointer"
         >
           <div
@@ -69,7 +63,7 @@ export function VideoCard({ tip, onPlay, className }: VideoCardProps) {
           {/* Center Play Icon Button */}
           <button
             type="button"
-            onClick={handlePlayClick}
+            onClick={handlePlay}
             className={cn(
               "relative z-10 mx-auto w-14 h-14 rounded-full text-white flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer",
               isTikTok
@@ -96,7 +90,7 @@ export function VideoCard({ tip, onPlay, className }: VideoCardProps) {
         {/* Card Body */}
         <div className="p-5 sm:p-6 space-y-3.5">
           <h4
-            onClick={handlePlayClick}
+            onClick={handlePlay}
             className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-brand-600 transition-colors cursor-pointer"
           >
             {tip.title}
@@ -126,25 +120,16 @@ export function VideoCard({ tip, onPlay, className }: VideoCardProps) {
       <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 flex items-center justify-between gap-3">
         <button
           type="button"
-          onClick={handlePlayClick}
+          onClick={handlePlay}
           className={cn(
-            "inline-flex items-center gap-1.5 text-xs font-semibold hover:underline py-1 transition-colors cursor-pointer",
+            "inline-flex items-center gap-1.5 text-xs font-bold hover:underline py-1 transition-colors cursor-pointer",
             isTikTok
               ? "text-rose-600 hover:text-rose-800"
               : "text-brand-600 hover:text-brand-800"
           )}
         >
-          {isTikTok ? (
-            <>
-              <span>🎵 Xem video trực tiếp</span>
-              <Play className="w-3 h-3 text-rose-500 fill-rose-500" />
-            </>
-          ) : (
-            <>
-              <span>Xem video</span>
-              <Play className="w-3 h-3 text-brand-500 fill-brand-500" />
-            </>
-          )}
+          <span>🎵 Xem video trực tiếp</span>
+          <Play className="w-3 h-3 fill-current" />
         </button>
 
         <Button

@@ -23,8 +23,8 @@ export function InstructorsSection() {
           align="center"
         />
 
-        {/* Teachers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+        {/* Teachers Grid (2 Core Teachers: Thầy Toàn & Thầy Huy) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto gap-6 sm:gap-8 items-stretch">
           {teachersData.teachers.map((teacher) => (
             <TeacherCard key={teacher.id} teacher={teacher} />
           ))}

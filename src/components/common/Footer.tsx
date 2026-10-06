@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/data/siteConfig";
 import {
@@ -82,9 +83,15 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
             {/* Col 1: Brand & Bio (4 cols) */}
             <div className="lg:col-span-4 space-y-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-brand-600 text-white flex items-center justify-center font-black text-xl shadow-md">
-                  🚗
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-full overflow-hidden shadow-sm shrink-0 border border-slate-700 bg-white p-0.5">
+                  <Image
+                    src="/images/logo.jpg"
+                    alt="Logo Thầy Toàn Dạy Lái Xe"
+                    width={44}
+                    height={44}
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-lg font-black text-white tracking-tight leading-tight">

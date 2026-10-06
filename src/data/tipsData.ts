@@ -25,8 +25,9 @@ export const tipsData: TipsData = {
       categoryLabel: "Ghép Xe Ngang",
       duration: "Video TikTok",
       difficulty: "Trọng điểm thi",
-      platform: "tiktok",
+      platform: "local",
       author: "Thầy Toàn Dạy Lái Xe",
+      videoSrc: "/videos/video_huong_dan_ghep_xe_ngang.mp4",
       tiktokVideoId: "7677388767237393684",
       summary:
         "Video thực tế Thầy Toàn trực tiếp hướng dẫn bí quyết ghép xe ngang chuẩn 3 bước: Căn đuôi xe ngang cọc góc, đánh lái lùi 45 độ và đưa bánh sau vào vạch chip cực nhanh không đè vạch.",
@@ -38,7 +39,7 @@ export const tipsData: TipsData = {
       ],
       youtubeUrl:
         "https://www.tiktok.com/@thaytoandaylai999/video/7677388767237393684?is_from_webapp=1&sender_device=pc",
-      viewsEstimate: "Video TikTok Thầy Toàn",
+      viewsEstimate: "Video Bài Giảng Thầy Toàn",
       isPlaceholder: false,
     },
   ],

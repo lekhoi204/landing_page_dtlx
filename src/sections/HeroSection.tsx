@@ -184,8 +184,14 @@ export function HeroSection() {
               {/* Top Card Header */}
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                    🚗
+                  <div className="w-9 h-9 rounded-full overflow-hidden shadow-xs shrink-0 border border-slate-200 bg-white">
+                    <Image
+                      src="/images/logo.jpg"
+                      alt="Logo Thầy Toàn Dạy Lái Xe"
+                      width={36}
+                      height={36}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">

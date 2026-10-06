@@ -66,7 +66,7 @@ export const trainingGroundsData: TrainingGroundsData = {
       standard: "Sân Tập Chuẩn B Số Sàn & Tự Động",
       features: [
         "Đầy đủ bài vệt bánh xe và đường vuông góc",
-        "Xe tập đời mới trang bị máy lạnh mát rượi",
+        "Xe tập đời mới trang bị máy lạnh đầy đủ",
         "Có giáo viên kèm riêng 1 kèm 1",
         "Bãi đỗ xe ô tô và xe máy an toàn cho học viên",
       ],

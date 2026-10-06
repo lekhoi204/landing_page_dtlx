@@ -1,31 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { VideoCard } from "@/components/ui/VideoCard";
+import { TikTokEmbedPlayer } from "@/components/ui/TikTokEmbedPlayer";
 import { Button } from "@/components/ui/Button";
 import { tipsData } from "@/data/tipsData";
-import { TipCategoryId } from "@/types/tips";
-import { cn } from "@/lib/utils";
-import { BookOpen, Sparkles, ArrowRight, PlayCircle, Video } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
-
-import { VideoModal } from "@/components/ui/VideoModal";
+import {
+  CheckCircle2,
+  Sparkles,
+  ArrowRight,
+  Phone,
+  UserCheck,
+  ShieldCheck,
+  Play,
+} from "lucide-react";
 
 export function TipsLibrarySection() {
-  const [activeCategory, setActiveCategory] = useState<TipCategoryId>("all");
-  const [selectedTip, setSelectedTip] = useState<any | null>(null);
-
-  const filteredTips =
-    activeCategory === "all"
-      ? tipsData.tips
-      : tipsData.tips.filter((t) => t.categoryId === activeCategory);
+  const currentTip = tipsData.tips[0];
 
   return (
     <section
       id="tips"
-      aria-label="Thư viện video mẹo thi và kỹ năng lái xe"
+      aria-label="Video hướng dẫn lái xe sa hình thực tế của Thầy Toàn"
       className="py-16 md:py-24 bg-slate-50/70 border-b border-slate-200/80 scroll-mt-14"
     >
       <Container>
@@ -38,54 +36,106 @@ export function TipsLibrarySection() {
           align="center"
         />
 
-        {/* Category Filter Tabs (Only show if multiple categories/videos) */}
-        {tipsData.categories.length > 2 && (
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-            {tipsData.categories.map((cat) => {
-              const isActive = activeCategory === cat.id;
-              return (
-                <button
-                  key={cat.id}
-                  type="button"
-                  onClick={() => setActiveCategory(cat.id)}
-                  className={cn(
-                    "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer select-none",
-                    "focus-visible:outline-2 focus-visible:outline-brand-600 focus-visible:outline-offset-2",
-                    isActive
-                      ? "bg-brand-600 text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80"
+        {/* Main Interactive Video Showcase Card (Plays directly on the web!) */}
+        {currentTip && (
+          <div className="mt-8 max-w-5xl mx-auto rounded-3xl bg-white border border-slate-200/90 shadow-lg p-6 sm:p-8 md:p-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              {/* Left Column: Native High-Definition Video Player */}
+              <div className="lg:col-span-6 flex justify-center w-full">
+                <div className="w-full max-w-[380px] sm:max-w-[420px] rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-800 bg-black relative aspect-[9/16] max-h-[580px] flex items-center justify-center group">
+                  {currentTip.videoSrc ? (
+                    <video
+                      src={currentTip.videoSrc}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-contain bg-black"
+                    >
+                      Trình duyệt của bạn không hỗ trợ phát video HTML5.
+                    </video>
+                  ) : (
+                    <TikTokEmbedPlayer
+                      videoId={currentTip.tiktokVideoId || "7677388767237393684"}
+                      videoUrl={currentTip.youtubeUrl}
+                    />
                   )}
-                >
-                  {cat.label}
-                </button>
-              );
-            })}
+                </div>
+              </div>
+
+              {/* Right Column: Detailed Lesson Steps & Teacher Callout */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className="space-y-3">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-brand-50 text-brand-700 border border-brand-200">
+                      {currentTip.categoryLabel}
+                    </span>
+                    <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 inline-flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      HD Chuẩn 100% • Thầy Toàn
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl sm:text-2xl font-black text-slate-900 leading-tight">
+                    {currentTip.title}
+                  </h3>
+
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {currentTip.summary}
+                  </p>
+                </div>
+
+                {/* Key Steps Checklist */}
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-3">
+                  <h4 className="text-xs sm:text-sm font-bold text-slate-900 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-amber-500" />
+                    Các bước căn điểm chuẩn 100/100:
+                  </h4>
+                  <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
+                    {currentTip.keySteps.map((step, idx) => (
+                      <li key={idx} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                        <span className="leading-snug">{step}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Teacher Trust Box */}
+                <div className="flex items-center gap-3 text-xs text-slate-600 pt-1">
+                  <div className="w-8 h-8 rounded-full bg-brand-600 text-white flex items-center justify-center font-bold text-xs shrink-0">
+                    TT
+                  </div>
+                  <div>
+                    <strong className="text-slate-900 block">Thầy Toàn Dạy Lái Xe</strong>
+                    <span>12 năm kinh nghiệm • Kèm sát từng buổi thực hành</span>
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                  <Button
+                    variant="primary"
+                    size="lg"
+                    href="#consultation"
+                    className="w-full sm:w-auto font-bold shadow-md text-sm sm:text-base"
+                  >
+                    Đăng Ký Học 1 Kèm 1 Với Thầy
+                  </Button>
+
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    href={`tel:${siteConfig.contact.hotlineRaw}`}
+                    leftIcon={<Phone className="w-4 h-4 text-brand-600" />}
+                    className="w-full sm:w-auto text-sm sm:text-base font-bold text-slate-700"
+                  >
+                    Hotline: {siteConfig.contact.hotlineDisplay}
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         )}
-
-        {/* Tips Video Grid / Centered Card for single video */}
-        <div
-          className={cn(
-            filteredTips.length === 1
-              ? "max-w-xl mx-auto"
-              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch"
-          )}
-        >
-          {filteredTips.map((tip) => (
-            <VideoCard
-              key={tip.id}
-              tip={tip}
-              onPlay={(t) => setSelectedTip(t)}
-            />
-          ))}
-        </div>
-
-        {/* Video Modal Player (Plays directly on web!) */}
-        <VideoModal
-          isOpen={Boolean(selectedTip)}
-          tip={selectedTip}
-          onClose={() => setSelectedTip(null)}
-        />
 
         {/* TikTok Channel Banner & 1-on-1 Callout */}
         <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
@@ -115,7 +165,7 @@ export function TipsLibrarySection() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto font-bold shadow-md text-sm sm:text-base bg-rose-600 hover:bg-rose-700"
             >
-              <span className="mr-1.5">🎵</span> Xem TikTok Thầy Toàn
+              <span className="mr-1.5">🎵</span> Xem Kênh TikTok
             </Button>
 
             <Button
@@ -125,7 +175,7 @@ export function TipsLibrarySection() {
               rightIcon={<ArrowRight className="w-4 h-4 text-slate-900" />}
               className="w-full sm:w-auto text-sm sm:text-base"
             >
-              Đăng Ký Học 1 Kèm 1
+              Đăng Ký Tư Vấn
             </Button>
           </div>
         </div>
