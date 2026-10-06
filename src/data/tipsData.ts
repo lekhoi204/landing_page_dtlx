@@ -28,7 +28,6 @@ export const tipsData: TipsData = {
       platform: "tiktok",
       author: "Thầy Toàn Dạy Lái Xe",
       tiktokVideoId: "7677388767237393684",
-      videoSrc: "/videos/ghep-xe-ngang-thay-toan.mp4",
       summary:
         "Video thực tế Thầy Toàn trực tiếp hướng dẫn bí quyết ghép xe ngang chuẩn 3 bước: Căn đuôi xe ngang cọc góc, đánh lái lùi 45 độ và đưa bánh sau vào vạch chip cực nhanh không đè vạch.",
       keySteps: [
