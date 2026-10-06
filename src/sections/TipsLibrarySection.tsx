@@ -8,7 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { tipsData } from "@/data/tipsData";
 import { TipCategoryId } from "@/types/tips";
 import { cn } from "@/lib/utils";
-import { BookOpen, Sparkles, ArrowRight, PlayCircle } from "lucide-react";
+import { BookOpen, Sparkles, ArrowRight, PlayCircle, Video } from "lucide-react";
+import { siteConfig } from "@/data/siteConfig";
 
 export function TipsLibrarySection() {
   const [activeCategory, setActiveCategory] = useState<TipCategoryId>("all");
@@ -64,31 +65,47 @@ export function TipsLibrarySection() {
           ))}
         </div>
 
-        {/* Bottom Callout Banner */}
-        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/90 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-5">
-          <div className="flex items-start gap-3.5">
-            <div className="w-11 h-11 rounded-2xl bg-accent-50 text-accent-600 flex items-center justify-center shrink-0 mt-0.5 border border-accent-200/60">
-              <PlayCircle className="w-6 h-6" />
+        {/* TikTok Channel Banner & 1-on-1 Callout */}
+        <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="flex items-start gap-4 text-center lg:text-left">
+            <div className="w-12 h-12 rounded-2xl bg-rose-500/20 text-rose-400 flex items-center justify-center shrink-0 mt-0.5 border border-rose-500/30 font-black text-xl">
+              🎵
             </div>
             <div className="space-y-1">
-              <h4 className="text-base sm:text-lg font-bold text-slate-900">
-                Bạn Muốn Được Hướng Dẫn Trực Tiếp Các Mẹo Này Trên Xe Thật?
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-[11px] font-bold">
+                Kênh TikTok Chính Thức: @thaytoandaylai999
+              </div>
+              <h4 className="text-base sm:text-xl font-bold text-white">
+                Theo Dõi TikTok Thầy Toàn Để Học Thêm Mẹo Thi Mới Mỗi Ngày
               </h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-                Đăng ký ngay khóa học 1 kèm 1 để được các thầy cầm tay chỉ việc, rèn mẹo căn điểm sa hình trực tiếp trên xe tập đời mới.
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-2xl">
+                Thầy Toàn thường xuyên chia sẻ các video thực tế về mẹo căn điểm sa hình 100/100, cách ghép xe dọc/ngang nhanh và kỹ năng xử lý tình huống giao thông thực tế.
               </p>
             </div>
           </div>
 
-          <Button
-            variant="accent"
-            size="lg"
-            href="#consultation"
-            rightIcon={<ArrowRight className="w-4 h-4" />}
-            className="shrink-0 w-full sm:w-auto font-bold shadow-xs text-sm sm:text-base"
-          >
-            Đăng Ký Học 1 Kèm 1
-          </Button>
+          <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0 w-full lg:w-auto">
+            <Button
+              variant="accent"
+              size="lg"
+              href={siteConfig.contact.tiktokUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto font-bold shadow-md text-sm sm:text-base bg-rose-600 hover:bg-rose-700"
+            >
+              <span className="mr-1.5">🎵</span> Xem TikTok Thầy Toàn
+            </Button>
+
+            <Button
+              variant="white"
+              size="lg"
+              href="#consultation"
+              rightIcon={<ArrowRight className="w-4 h-4 text-slate-900" />}
+              className="w-full sm:w-auto text-sm sm:text-base"
+            >
+              Đăng Ký Học 1 Kèm 1
+            </Button>
+          </div>
         </div>
       </Container>
     </section>

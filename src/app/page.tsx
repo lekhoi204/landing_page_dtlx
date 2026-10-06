@@ -1,11 +1,9 @@
 import { HeroSection } from "@/sections/HeroSection";
-import { FeeEstimatorSection } from "@/sections/FeeEstimatorSection";
 import { PricingSection } from "@/sections/PricingSection";
 import { CommitmentsSection } from "@/sections/CommitmentsSection";
 import { InstructorsSection } from "@/sections/InstructorsSection";
 import { TrainingGroundsSection } from "@/sections/TrainingGroundsSection";
 import { TipsLibrarySection } from "@/sections/TipsLibrarySection";
-import { TestimonialsSection } from "@/sections/TestimonialsSection";
 import { SpecialPackagesSection } from "@/sections/SpecialPackagesSection";
 import { PostLicenseSection } from "@/sections/PostLicenseSection";
 import { ConsultationFormSection } from "@/sections/ConsultationFormSection";
@@ -16,35 +14,30 @@ export default function HomePage() {
       {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* 2. Interactive Fee Estimator Section */}
-      <FeeEstimatorSection />
-
-      {/* 3. Pricing Section (Bảng Giá) */}
+      {/* 2. Pricing Section (Bảng Giá Khóa Học) */}
       <PricingSection />
 
-      {/* 4. Commitments Section (Cam Kết 3 Không) */}
+      {/* 3. Commitments Section (Cam Kết 3 Không) */}
       <CommitmentsSection />
 
-      {/* 5. Instructors Section (Đội Ngũ Giáo Viên) */}
+      {/* 4. Instructors Section (Đội Ngũ Giáo Viên) */}
       <InstructorsSection />
 
-      {/* 6. Training Grounds Section (Hệ Thống Sân Tập) */}
+      {/* 5. Training Grounds Section (Hệ Thống Sân Tập) */}
       <TrainingGroundsSection />
 
-      {/* 7. Tips & Video Library Section (Thư Viện Mẹo Thi) */}
+      {/* 6. Tips & Video Library Section (Thư Viện Mẹo Thi & Kênh TikTok) */}
       <TipsLibrarySection />
 
-      {/* 8. Testimonials & Graduates Section (Review & Gallery Nhận Bằng) */}
-      <TestimonialsSection />
-
-      {/* 9. Special Packages Section (Gói Dịch Vụ Đặc Biệt) */}
+      {/* 7. Special Packages Section (Gói Dịch Vụ Đặc Biệt) */}
       <SpecialPackagesSection />
 
-      {/* 10. Post-License Hub Section (Góc Sau Khi Có Bằng) */}
+      {/* 8. Post-License Hub Section (Góc Sau Khi Có Bằng) */}
       <PostLicenseSection />
 
-      {/* 11. Consultation & Lead Form Section */}
+      {/* 9. Consultation & Lead Form Section */}
       <ConsultationFormSection />
     </main>
   );
 }
+

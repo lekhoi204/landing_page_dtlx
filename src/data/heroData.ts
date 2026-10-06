@@ -5,11 +5,11 @@ export const heroData: HeroData = {
   headline: "Học thật - Thi thật - Tỷ lệ đỗ >95% ngay lần đầu",
   highlightText: "Tỷ lệ đỗ >95% ngay lần đầu",
   supportingText:
-    "Chương trình đào tạo thực chiến 1 kèm 1, cam kết trọn gói không phát sinh chi phí. Linh hoạt tự chọn thời gian học lý thuyết, mô phỏng 120 tình huống, 11 bài thi sa hình và vững tay lái thực tế trên đường trường.",
-  primaryCtaText: "Tính chi phí & lộ trình",
-  primaryCtaHref: "#fee-estimator",
-  secondaryCtaText: "Đăng ký tư vấn",
-  secondaryCtaHref: "#consultation",
+    "Chương trình đào tạo thực chiến 1 kèm 1 do Thầy Toàn trực tiếp phụ trách, cam kết trọn gói không phát sinh chi phí. Linh hoạt tự chọn thời gian học lý thuyết, mô phỏng 120 tình huống, 11 bài thi sa hình và vững tay lái thực tế trên đường trường.",
+  primaryCtaText: "Xem Bảng Giá Khóa Học",
+  primaryCtaHref: "#pricing",
+  secondaryCtaText: "TikTok Thầy Toàn",
+  secondaryCtaHref: "https://www.tiktok.com/@thaytoandaylai999?is_from_webapp=1&sender_device=pc",
   licensePills: [
     { code: "B1", name: "Xe số tự động", target: "Gia đình, đi làm hàng ngày" },
     { code: "B2", name: "Xe số sàn & tự động", target: "Kinh doanh, lái xe dịch vụ" },

@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "accent" | "secondary" | "outline" | "ghost" | "link";
+  variant?: "primary" | "accent" | "secondary" | "outline" | "outline-dark" | "white" | "ghost" | "link";
   size?: "sm" | "md" | "lg" | "icon";
   fullWidth?: boolean;
   isLoading?: boolean;
@@ -22,8 +22,12 @@ export const buttonVariants = {
       "bg-accent-500 text-white hover:bg-accent-600 active:bg-accent-700 shadow-sm hover:shadow-md transition-all duration-150 font-semibold border border-transparent",
     secondary:
       "bg-slate-100 text-slate-800 hover:bg-slate-200 active:bg-slate-300 border border-slate-200/80 transition-colors duration-150",
+    white:
+      "bg-white text-slate-900 hover:bg-slate-100 active:bg-slate-200 border border-white shadow-md transition-all duration-150 font-bold",
     outline:
       "bg-white text-slate-700 border border-slate-300 hover:border-brand-600 hover:bg-brand-50/50 hover:text-brand-700 active:bg-brand-100/60 transition-all duration-150",
+    "outline-dark":
+      "bg-white/10 text-white border border-white/20 hover:bg-white/20 hover:border-white/40 active:bg-white/25 transition-all duration-150 font-semibold",
     ghost:
       "bg-transparent text-slate-700 hover:bg-slate-100 hover:text-slate-900 active:bg-slate-200 transition-colors duration-150",
     link: "bg-transparent text-brand-600 hover:text-brand-700 underline-offset-4 hover:underline p-0 h-auto",

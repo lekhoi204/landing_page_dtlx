@@ -10,18 +10,18 @@ export const teachersData: TeachersSectionData = {
   teachers: [
     {
       id: "teacher-01",
-      name: "Thầy Nguyễn Hùng",
-      title: "Giáo Viên Trưởng Bộ Môn Thực Hành",
+      name: "Thầy Toàn",
+      title: "Giáo Viên Phụ Trách Đào Tạo & Thực Hành",
       experienceYears: 12,
-      experienceText: "12 năm kinh nghiệm đào tạo B1, B2",
+      experienceText: "12 năm kinh nghiệm đào tạo B1, B2, C",
       specialties: ["Hạng B1", "Hạng B2", "Mẹo 11 bài Sa hình", "Bổ túc tay lái"],
-      bio: "Chuyên đào tạo học viên mới bắt đầu, đặc biệt là học viên nữ và người hay bị tâm lý phòng thi.",
+      bio: "Phụ trách đào tạo chính tại trung tâm, trực tiếp kèm cặp học viên từ cơ bản đến vững vàng tay lái, chuyên trị tâm lý sợ lái và rèn mẹo sa hình đạt điểm tối đa.",
       teachingPhilosophy:
-        "Kiên nhẫn, điềm tĩnh, chỉ rõ nguyên lý vận hành xe giúp học viên hiểu bản chất thay vì học vẹt.",
-      studentsTrainedText: "1.800+ Học viên",
-      passRateText: "97.5% Đỗ lần 1",
-      badge: "Giáo Viên Tiêu Biểu",
-      isPlaceholder: true,
+        "Tận tâm, kiên nhẫn, truyền đạt trực quan dễ hiểu, dạy lái xe chuẩn thực tế an toàn trọn đời.",
+      studentsTrainedText: "2.000+ Học viên",
+      passRateText: "98% Đỗ lần 1",
+      badge: "Thầy Toàn Dạy Lái Xe",
+      isPlaceholder: false,
       avatarColor: "bg-brand-600",
     },
     {

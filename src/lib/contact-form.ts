@@ -63,15 +63,25 @@ export function validateLeadForm(data: LeadFormData): {
   };
 }
 
+// In-flight submission tracking to prevent accidental duplicate requests
+let isSubmittingInFlight = false;
+
 /**
- * Service Abstraction for Lead Submission
- * In current phase: Simulates async API call with localStorage caching.
- * In next phase: Simply replace the fetch logic with Google Apps Script Webhook URL.
+ * Service Abstraction for Lead Submission to Google Sheets via Google Apps Script Web App
+ * Flow: Frontend -> POST -> Google Apps Script Web App -> Google Sheets
  */
 export async function submitConsultationLead(
   data: LeadFormData
 ): Promise<SubmitLeadResult> {
-  // 1. Client-side validation
+  // 1. In-flight duplicate prevention
+  if (isSubmittingInFlight) {
+    return {
+      success: false,
+      message: "Yêu cầu đang được xử lý, vui lòng không bấm liên tục.",
+    };
+  }
+
+  // 2. Client-side validation
   const { isValid, errors } = validateLeadForm(data);
   if (!isValid) {
     return {
@@ -81,43 +91,70 @@ export async function submitConsultationLead(
     };
   }
 
+  isSubmittingInFlight = true;
+
+  const endpoint = process.env.NEXT_PUBLIC_FORM_ENDPOINT?.trim();
+
+  // Payload format matching user's Google Sheet: Thời Gian | Họ Tên | Số Điện Thoại | Nhu Cầu | Trạng Thái
+  const payload = {
+    name: data.fullName.trim(),
+    phone: data.phone.trim(),
+    demand: data.licenseInterest || "Hạng B1 (Tự động)",
+    status: "Chưa xử lý",
+    submittedAt: new Date().toISOString(),
+  };
+
   try {
-    // 2. Simulated network latency for realistic UX
-    await new Promise((resolve) => setTimeout(resolve, 800));
-
-    const payload: LeadFormData = {
-      fullName: data.fullName.trim(),
-      phone: data.phone.trim(),
-      licenseInterest: data.licenseInterest || "Tư vấn tổng quan",
-      submittedAt: new Date().toISOString(),
-      source: typeof window !== "undefined" ? window.location.href : "Website Landing Page",
-    };
-
-    // Save lead to localStorage for debugging/persistence if in browser
-    if (typeof window !== "undefined" && window.localStorage) {
-      try {
-        const existingLeads = JSON.parse(
-          localStorage.getItem("driving_school_leads") || "[]"
+    // If endpoint is not yet configured (e.g. during dev before deploying Google Apps Script)
+    if (!endpoint) {
+      if (process.env.NODE_ENV !== "production") {
+        console.warn(
+          "[LeadService] NEXT_PUBLIC_FORM_ENDPOINT is not configured in .env.local. Simulating success in development mode."
         );
-        existingLeads.unshift(payload);
-        localStorage.setItem(
-          "driving_school_leads",
-          JSON.stringify(existingLeads.slice(0, 50))
-        );
-      } catch {
-        // Silently ignore storage quota issues
       }
+
+      // Simulate network latency in dev mode
+      await new Promise((resolve) => setTimeout(resolve, 700));
+
+      return {
+        success: true,
+        message:
+          "Cảm ơn bạn! Thông tin đã được ghi nhận. Thầy/cô sẽ liên hệ tư vấn sớm nhất.",
+        leadId: `DEV-${Date.now().toString().slice(-6)}`,
+      };
     }
 
-    /* 
-     * TODO (Next Phase - Google Apps Script Integration):
-     * const response = await fetch(GOOGLE_APPS_SCRIPT_WEBHOOK_URL, {
-     *   method: "POST",
-     *   headers: { "Content-Type": "application/json" },
-     *   body: JSON.stringify(payload),
-     * });
-     * const result = await response.json();
-     */
+    // 3. Send POST request to Google Apps Script Web App
+    // Note: Using text/plain;charset=utf-8 avoids CORS preflight restrictions on Google Apps Script Web Apps
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=utf-8",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    // Try parsing response as JSON if provided
+    let responseData: { status?: string; message?: string } | null = null;
+    try {
+      const text = await response.text();
+      responseData = text ? JSON.parse(text) : null;
+    } catch {
+      // If response is not JSON, we still check HTTP 200 ok
+    }
+
+    if (responseData && responseData.status === "error") {
+      return {
+        success: false,
+        message:
+          responseData.message ||
+          "Có lỗi xảy ra khi ghi nhận thông tin. Vui lòng liên hệ trực tiếp hotline.",
+      };
+    }
 
     return {
       success: true,
@@ -129,10 +166,13 @@ export async function submitConsultationLead(
     return {
       success: false,
       message:
-        "Có lỗi xảy ra khi gửi thông tin. Bạn vui lòng gọi trực tiếp hotline để được hỗ trợ nhanh nhất.",
+        "Có lỗi xảy ra khi kết nối. Bạn vui lòng gọi trực tiếp hotline để được tư vấn nhanh nhất.",
       errors: {
-        general: "Không thể kết nối đến máy chủ. Vui lòng thử lại sau ít phút.",
+        general:
+          "Không thể gửi thông tin đến máy chủ lúc này. Vui lòng thử lại sau.",
       },
     };
+  } finally {
+    isSubmittingInFlight = false;
   }
 }

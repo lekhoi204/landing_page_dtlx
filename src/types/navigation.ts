@@ -12,6 +12,7 @@ export interface ContactInfo {
   consultantPhoneDisplay: string;
   consultantPhoneRaw: string;
   zaloUrl: string;
+  tiktokUrl: string;
 }
 
 export interface SiteConfig {

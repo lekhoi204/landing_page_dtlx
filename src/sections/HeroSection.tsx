@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
@@ -58,7 +59,7 @@ export function HeroSection() {
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[2.9rem] font-black text-slate-900 tracking-tight leading-[1.15] text-balance">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-[1.15] text-balance">
               Học thật - Thi thật -{" "}
               <span className="text-brand-600 relative inline-block">
                 Tỷ lệ đỗ &gt;95%
@@ -99,26 +100,29 @@ export function HeroSection() {
               <Button
                 variant="accent"
                 size="lg"
-                href={heroData.primaryCtaHref}
-                leftIcon={<Calculator className="w-5 h-5" />}
+                href="#pricing"
+                leftIcon={<Car className="w-5 h-5" />}
                 rightIcon={<ArrowRight className="w-4 h-4" />}
                 className="text-base font-bold shadow-md hover:shadow-lg transition-all"
               >
-                {heroData.primaryCtaText}
+                Xem Bảng Giá Khóa Học
               </Button>
 
-              {/* Secondary CTA */}
+              {/* TikTok CTA */}
               <Button
                 variant="outline"
                 size="lg"
-                href={heroData.secondaryCtaHref}
-                className="text-base font-semibold border-slate-300 hover:border-brand-500 hover:text-brand-700"
+                href={siteConfig.contact.tiktokUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-bold border-slate-300 hover:border-slate-900 hover:bg-slate-900 hover:text-white transition-all group"
               >
-                {heroData.secondaryCtaText}
+                <span className="inline-block mr-2 font-black text-rose-500 group-hover:text-rose-400">🎵</span>
+                TikTok Thầy Toàn
               </Button>
             </div>
 
-            {/* Direct Phone & Hotline Info Pill */}
+            {/* Direct Phone, Zalo & TikTok Info Pill */}
             <div className="w-full pt-2 flex flex-wrap items-center gap-y-2 gap-x-4 text-xs sm:text-sm text-slate-600 bg-slate-100/80 px-4 py-2.5 rounded-xl border border-slate-200/70">
               <div className="flex items-center gap-1.5">
                 <Phone className="w-4 h-4 text-brand-600 shrink-0" />
@@ -143,29 +147,57 @@ export function HeroSection() {
                   ({siteConfig.contact.consultantPhoneDisplay})
                 </a>
               </div>
+              <span className="hidden md:inline text-slate-300">|</span>
+              <div className="flex items-center gap-1.5">
+                <span className="font-semibold text-slate-900">TikTok:</span>
+                <a
+                  href={siteConfig.contact.tiktokUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold text-rose-600 hover:underline"
+                >
+                  @thaytoandaylai999
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Structured Training & Trust Visual (5 cols on lg) */}
+          {/* Right Column: Structured Training & Trust Visual with Banner (5 cols on lg) */}
           <div className="lg:col-span-5 w-full">
-            <div className="relative bg-white rounded-3xl p-6 sm:p-7 shadow-xl border border-slate-200/90 space-y-5">
+            <div className="relative bg-white rounded-3xl p-5 sm:p-7 shadow-xl border border-slate-200/90 space-y-4">
+              {/* Real Hero Banner Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-sm border border-slate-200/80 group">
+                <Image
+                  src="/images/banner.jpg"
+                  alt="Thầy Toàn Dạy Lái Xe - Trung tâm đào tạo lái xe chuyên nghiệp"
+                  width={600}
+                  height={350}
+                  priority
+                  className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-2.5 left-2.5 bg-slate-900/85 backdrop-blur-xs text-white text-[11px] font-bold px-2.5 py-1 rounded-lg border border-white/20 flex items-center gap-1.5 shadow-sm">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  Thầy Toàn Dạy Lái Xe
+                </div>
+              </div>
+
               {/* Top Card Header */}
-              <div className="flex items-center justify-between border-b border-slate-100 pb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-2xl bg-brand-600 text-white flex items-center justify-center font-bold text-2xl shadow-sm">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-brand-600 text-white flex items-center justify-center font-bold text-lg shadow-sm">
                     🚗
                   </div>
                   <div>
-                    <h2 className="text-base font-bold text-slate-900 leading-tight">
+                    <h2 className="text-sm sm:text-base font-bold text-slate-900 leading-tight">
                       Lộ Trình Đào Tạo Thực Tế
                     </h2>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-[11px] text-slate-500">
                       Chuẩn quy chuẩn Tổng cục Đường bộ
                     </p>
                   </div>
                 </div>
 
-                <Badge variant="success" size="sm" className="font-semibold">
+                <Badge variant="success" size="sm" className="font-semibold text-[10px]">
                   Tuyển sinh K48
                 </Badge>
               </div>

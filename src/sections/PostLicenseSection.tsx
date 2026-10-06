@@ -117,11 +117,11 @@ export function PostLicenseSection() {
               </Button>
 
               <Button
-                variant="outline"
+                variant="outline-dark"
                 size="lg"
                 href="#consultation"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
-                className="w-full sm:w-auto text-white border-slate-700 hover:bg-slate-800 text-sm sm:text-base"
+                className="w-full sm:w-auto text-sm sm:text-base"
               >
                 Hỏi Chuyên Gia Lái Xe
               </Button>

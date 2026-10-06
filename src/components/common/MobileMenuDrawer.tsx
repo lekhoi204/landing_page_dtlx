@@ -11,17 +11,24 @@ interface MobileMenuDrawerProps {
 }
 
 export function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerProps) {
-  // Prevent scrolling when drawer is open
+  // Prevent scrolling when drawer is open and handle Escape key
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          onClose();
+        }
+      };
+      window.addEventListener("keydown", handleKeyDown);
+      return () => {
+        document.body.style.overflow = "unset";
+        window.removeEventListener("keydown", handleKeyDown);
+      };
     } else {
       document.body.style.overflow = "unset";
     }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -128,6 +135,16 @@ export function MobileMenuDrawer({ isOpen, onClose }: MobileMenuDrawerProps) {
               Chat Zalo
             </Button>
           </div>
+
+          <a
+            href={siteConfig.contact.tiktokUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-slate-900 text-white hover:bg-slate-800 text-xs font-bold transition-all shadow-sm"
+          >
+            <span>🎵</span>
+            <span>Xem TikTok Thầy Toàn (@thaytoandaylai999)</span>
+          </a>
 
           <Button
             variant="accent"

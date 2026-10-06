@@ -151,7 +151,7 @@ export function FeeEstimatorSection() {
             </div>
 
             {/* Stepper Navigation Pills */}
-            <div className="grid grid-cols-4 gap-2 mt-4 pt-4 border-t border-slate-800" role="tablist">
+            <div className="grid grid-cols-4 gap-1.5 sm:gap-2 mt-4 pt-4 border-t border-slate-800" role="tablist">
               {stepsList.map((step) => {
                 const isCurrent = currentStep === step.number;
                 const isPassed = currentStep > step.number;
@@ -164,7 +164,7 @@ export function FeeEstimatorSection() {
                     role="tab"
                     aria-selected={isCurrent}
                     className={cn(
-                      "flex flex-col sm:flex-row items-center sm:items-start gap-1.5 sm:gap-2.5 p-2 rounded-xl text-left transition-all duration-150 select-none",
+                      "flex flex-col sm:flex-row items-center sm:items-start gap-1 sm:gap-2.5 p-1.5 sm:p-2 rounded-xl text-left transition-all duration-150 select-none min-h-[44px] justify-center sm:justify-start",
                       isCurrent && "bg-brand-600 text-white shadow-xs font-semibold",
                       isPassed && "bg-slate-800/80 text-emerald-400 hover:bg-slate-800",
                       !isCurrent && !isPassed && "bg-slate-800/30 text-slate-400 hover:bg-slate-800/60"

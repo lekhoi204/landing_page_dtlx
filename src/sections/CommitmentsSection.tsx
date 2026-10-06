@@ -140,11 +140,11 @@ export function CommitmentsSection() {
               </Button>
 
               <Button
-                variant="outline"
+                variant="outline-dark"
                 size="lg"
                 href={`tel:${siteConfig.contact.hotlineRaw}`}
                 leftIcon={<Phone className="w-4 h-4 text-amber-400" />}
-                className="w-full sm:w-auto text-white border-slate-700 hover:bg-slate-800 text-sm sm:text-base"
+                className="w-full sm:w-auto text-sm sm:text-base"
               >
                 Hotline: {siteConfig.contact.hotlineDisplay}
               </Button>

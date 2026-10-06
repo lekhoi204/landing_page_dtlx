@@ -15,10 +15,10 @@ export const reviewsData: ReviewsData = {
       scoreText: "100/100 Điểm Sa Hình",
       courseBatch: "Khóa K45 - Tốt nghiệp Tháng 8",
       content:
-        "Mình là phụ nữ, ban đầu rất sợ ngồi sau vô lăng vì sợ đạp nhầm chân ga. Rất may được Thầy Hùng hướng dẫn cực kỳ kiên nhẫn, điềm tĩnh, không một lần cáu gắt. Thầy chỉ mẹo canh điểm chuồng dọc chuồng ngang rất dễ nhớ, thi sa hình đạt tròn 100 điểm ngay lần đầu!",
+        "Mình là phụ nữ, ban đầu rất sợ ngồi sau vô lăng vì sợ đạp nhầm chân ga. Rất may được Thầy Toàn hướng dẫn cực kỳ kiên nhẫn, điềm tĩnh, không một lần cáu gắt. Thầy chỉ mẹo canh điểm chuồng dọc chuồng ngang rất dễ nhớ, thi sa hình đạt tròn 100 điểm ngay lần đầu!",
       rating: 5,
       dateText: "2 tuần trước",
-      teacherMentored: "Thầy Nguyễn Hùng",
+      teacherMentored: "Thầy Toàn",
       avatarColor: "bg-rose-600",
       isPlaceholder: true,
     },

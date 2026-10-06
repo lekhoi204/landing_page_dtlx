@@ -36,7 +36,7 @@ export function ConsultationFormSection() {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: "",
     phone: "",
-    licenseInterest: "B1",
+    licenseInterest: "Hạng B1 (Tự động)",
   });
 
   const [errors, setErrors] = useState<LeadFormErrors>({});
@@ -330,7 +330,7 @@ export function ConsultationFormSection() {
                     </label>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                       {licenseOptions.map((opt) => {
-                        const isSelected = formData.licenseInterest === opt.id;
+                        const isSelected = formData.licenseInterest === opt.label;
                         return (
                           <button
                             key={opt.id}
@@ -338,7 +338,7 @@ export function ConsultationFormSection() {
                             onClick={() =>
                               setFormData((prev) => ({
                                 ...prev,
-                                licenseInterest: opt.id,
+                                licenseInterest: opt.label,
                               }))
                             }
                             className={cn(
@@ -384,7 +384,7 @@ export function ConsultationFormSection() {
                         aria-invalid={Boolean(errors.fullName)}
                         aria-describedby={errors.fullName ? "fullName-error" : undefined}
                         className={cn(
-                          "w-full pl-10 pr-4 py-3 rounded-xl text-sm bg-white border text-slate-900 transition-colors",
+                          "w-full pl-10 pr-4 py-3 rounded-xl text-base md:text-sm bg-white border text-slate-900 transition-colors",
                           "focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-600",
                           errors.fullName
                             ? "border-rose-500 bg-rose-50/20 text-rose-900 focus:border-rose-600 focus:ring-rose-500/20"
@@ -434,7 +434,7 @@ export function ConsultationFormSection() {
                         aria-invalid={Boolean(errors.phone)}
                         aria-describedby={errors.phone ? "phone-error" : undefined}
                         className={cn(
-                          "w-full pl-10 pr-4 py-3 rounded-xl text-sm bg-white border text-slate-900 transition-colors",
+                          "w-full pl-10 pr-4 py-3 rounded-xl text-base md:text-sm bg-white border text-slate-900 transition-colors",
                           "focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-600",
                           errors.phone
                             ? "border-rose-500 bg-rose-50/20 text-rose-900 focus:border-rose-600 focus:ring-rose-500/20"
