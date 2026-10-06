@@ -118,8 +118,8 @@ export const courseData: FeeEstimatorConfig = {
   categories: [
     {
       id: "B1",
-      name: "Bằng Lái B1 (Số Tự Động)",
-      code: "B1",
+      name: "Bằng B (Số Tự Động)",
+      code: "B Tự Động",
       vehicleType: "Ô tô số tự động dưới 9 chỗ, xe tải tự động < 3.5 tấn",
       minAge: 18,
       description: "Dễ học, không lo tắt máy giữa dốc, phù hợp lái xe gia đình và đi làm hàng ngày.",
@@ -129,8 +129,8 @@ export const courseData: FeeEstimatorConfig = {
     },
     {
       id: "B2",
-      name: "Bằng Lái B2 (Số Sàn & Tự Động)",
-      code: "B2",
+      name: "Bằng B (Số Sàn & Tự Động)",
+      code: "B Số Sàn",
       vehicleType: "Ô tô số sàn & tự động dưới 9 chỗ, xe tải < 3.5 tấn",
       minAge: 18,
       description: "Lái được cả số sàn và số tự động, phù hợp kinh doanh vận tải, taxi, chạy dịch vụ.",
@@ -155,7 +155,7 @@ export const courseData: FeeEstimatorConfig = {
       code: "D",
       vehicleType: "Ô tô chở người từ 10 đến 30 chỗ ngồi",
       minAge: 24,
-      description: "Khóa nâng hạng từ B2 hoặc C lên D dành cho tài xế có kinh nghiệm và đủ số năm thâm niên.",
+      description: "Khóa nâng hạng từ B số sàn hoặc C lên D dành cho tài xế có kinh nghiệm và đủ số năm thâm niên.",
       popular: false,
       badge: "Nâng hạng",
       icon: "Bus",
@@ -275,7 +275,7 @@ export const courseData: FeeEstimatorConfig = {
         practiceHours: 40,
         estimatedDuration: "3.5 - 4 tháng",
         datKilometers: 810,
-        priceNote: "Dự toán trọn gói tham khảo hạng B2 số sàn & số tự động",
+        priceNote: "Dự toán trọn gói tham khảo hạng B số sàn & số tự động",
         benefits: [
           "Học lái cả xe số sàn và số tự động",
           "Kỹ thuật côn - ga - phanh mượt mà không tắt máy",
@@ -289,7 +289,7 @@ export const courseData: FeeEstimatorConfig = {
         isPlaceholderPrice: true,
         practiceHours: 12,
         estimatedDuration: "2 - 3 tuần",
-        priceNote: "Dự toán khóa ôn luyện sa hình & xe chip B2",
+        priceNote: "Dự toán khóa ôn luyện sa hình & xe chip B số sàn",
         benefits: [
           "Khắc phục triệt để lỗi đề-pa dốc số sàn",
           "Ghép xe dọc, ghép xe ngang chuẩn xác từng centimet",
@@ -302,7 +302,7 @@ export const courseData: FeeEstimatorConfig = {
         isPlaceholderPrice: true,
         practiceHours: 10,
         estimatedDuration: "1 - 2 tuần",
-        priceNote: "Dự toán gói bổ túc tay lái B2 thực chiến",
+        priceNote: "Dự toán gói bổ túc tay lái B số sàn thực chiến",
         benefits: [
           "Côn ga thuần thục khi kẹt xe đường dốc",
           "Căn lề, quay đầu, lùi chuồng hẹp thực tế",
@@ -361,7 +361,7 @@ export const courseData: FeeEstimatorConfig = {
         isPlaceholderPrice: true,
         practiceHours: 24,
         estimatedDuration: "2 - 2.5 tháng",
-        priceNote: "Dự toán khóa nâng hạng B2/C lên D (Yêu cầu đủ năm kinh nghiệm & km an toàn)",
+        priceNote: "Dự toán khóa nâng hạng B số sàn/C lên D (Yêu cầu đủ năm kinh nghiệm & km an toàn)",
         benefits: [
           "Hồ sơ nâng hạng trọn gói theo đúng quy định",
           "Thực hành lái xe khách 10 - 30 chỗ",

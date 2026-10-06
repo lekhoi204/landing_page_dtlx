@@ -11,7 +11,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "rev-01",
       authorName: "Học Viên Thu Trang",
-      licenseClass: "Hạng B1 (Số Tự Động)",
+      licenseClass: "Hạng B (Số Tự Động)",
       scoreText: "100/100 Điểm Sa Hình",
       courseBatch: "Khóa K45 - Tốt nghiệp Tháng 8",
       content:
@@ -25,7 +25,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "rev-02",
       authorName: "Học Viên Minh Đức",
-      licenseClass: "Hạng B2 (Số Sàn)",
+      licenseClass: "Hạng B (Số Sàn)",
       scoreText: "95/100 Điểm Sa Hình - 100/100 Lý Thuyết",
       courseBatch: "Khóa K44 - Tốt nghiệp Tháng 7",
       content:
@@ -39,7 +39,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "rev-03",
       authorName: "Học Viên Quốc Bảo",
-      licenseClass: "Hạng B2 (Số Sàn & Tự Động)",
+      licenseClass: "Hạng B (Số Sàn & Tự Động)",
       scoreText: "100/100 Sa Hình - 50/50 Mô Phỏng",
       courseBatch: "Khóa K46 - Tốt nghiệp Tháng 9",
       content:
@@ -53,7 +53,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "rev-04",
       authorName: "Học Viên Thanh Hằng",
-      licenseClass: "Hạng B1 (Bổ Túc Tay Lái)",
+      licenseClass: "Hạng B (Bổ Túc Tay Lái)",
       scoreText: "Tự Tin Lái Xe Gia Đình",
       courseBatch: "Khóa Bổ Túc Tháng 9",
       content:
@@ -69,7 +69,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "grad-01",
       name: "Nguyễn Văn Hùng",
-      licenseClass: "Hạng B2",
+      licenseClass: "Hạng B Số Sàn",
       scoreText: "100/100 Sa hình",
       courseBatch: "Khóa K46",
       completionDate: "T9/2026",
@@ -79,7 +79,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "grad-02",
       name: "Trần Thị Mai",
-      licenseClass: "Hạng B1",
+      licenseClass: "Hạng B Tự Động",
       scoreText: "98/100 Sa hình",
       courseBatch: "Khóa K46",
       completionDate: "T9/2026",
@@ -89,7 +89,7 @@ export const reviewsData: ReviewsData = {
     {
       id: "grad-03",
       name: "Lê Hoàng Nam",
-      licenseClass: "Hạng B2",
+      licenseClass: "Hạng B Số Sàn",
       scoreText: "100/100 Sa hình",
       courseBatch: "Khóa K45",
       completionDate: "T8/2026",

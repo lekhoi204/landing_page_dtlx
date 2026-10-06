@@ -36,7 +36,7 @@ export function ConsultationFormSection() {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: "",
     phone: "",
-    licenseInterest: "Hạng B1 (Tự động)",
+    licenseInterest: "Hạng B (Tự động)",
   });
 
   const [errors, setErrors] = useState<LeadFormErrors>({});
@@ -45,8 +45,8 @@ export function ConsultationFormSection() {
   const [serverMessage, setServerMessage] = useState<string>("");
 
   const licenseOptions = [
-    { id: "B1", label: "Hạng B1 (Tự động)" },
-    { id: "B2", label: "Hạng B2 (Số sàn)" },
+    { id: "B_auto", label: "Hạng B (Tự động)" },
+    { id: "B_manual", label: "Hạng B (Số sàn)" },
     { id: "C", label: "Hạng C (Xe tải)" },
     { id: "post_license", label: "Bổ túc tay lái" },
   ];
@@ -126,7 +126,7 @@ export function ConsultationFormSection() {
     setFormData({
       fullName: "",
       phone: "",
-      licenseInterest: "B1",
+      licenseInterest: "Hạng B (Tự động)",
     });
     setErrors({});
     setTouched({});

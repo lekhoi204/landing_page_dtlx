@@ -1,7 +1,7 @@
 export interface ReviewItem {
   id: string;
   authorName: string;
-  licenseClass: string; // e.g. "B1 Số Tự Động", "B2 Số Sàn"
+  licenseClass: string; // e.g. "Hạng B (Số Tự Động)", "Hạng B (Số Sàn)"
   scoreText: string; // e.g. "100/100 Điểm Sa Hình"
   courseBatch: string; // e.g. "Khóa K46"
   content: string;

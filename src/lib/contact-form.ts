@@ -99,7 +99,7 @@ export async function submitConsultationLead(
   const payload = {
     name: data.fullName.trim(),
     phone: data.phone.trim(),
-    demand: data.licenseInterest || "Hạng B1 (Tự động)",
+    demand: data.licenseInterest || "Hạng B (Tự động)",
     status: "Chưa xử lý",
     submittedAt: new Date().toISOString(),
   };

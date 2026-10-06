@@ -13,8 +13,8 @@ export const teachersData: TeachersSectionData = {
       name: "Thầy Toàn",
       title: "Giáo Viên Phụ Trách Đào Tạo & Thực Hành",
       experienceYears: 12,
-      experienceText: "12 năm kinh nghiệm đào tạo B1, B2, C",
-      specialties: ["Hạng B1", "Hạng B2", "Mẹo 11 bài Sa hình", "Bổ túc tay lái"],
+      experienceText: "12 năm kinh nghiệm đào tạo B tự động, B số sàn, C",
+      specialties: ["Hạng B Tự Động", "Hạng B Số Sàn", "Mẹo 11 bài Sa hình", "Bổ túc tay lái"],
       bio: "Phụ trách đào tạo chính tại trung tâm, trực tiếp kèm cặp học viên từ cơ bản đến vững vàng tay lái, chuyên trị tâm lý sợ lái và rèn mẹo sa hình đạt điểm tối đa.",
       teachingPhilosophy:
         "Tận tâm, kiên nhẫn, truyền đạt trực quan dễ hiểu, dạy lái xe chuẩn thực tế an toàn trọn đời.",
@@ -30,7 +30,7 @@ export const teachersData: TeachersSectionData = {
       title: "Giáo Viên Đào Tạo Đường Trường DAT",
       experienceYears: 10,
       experienceText: "10 năm kinh nghiệm sa hình & DAT",
-      specialties: ["Hạng B2", "Hạng C", "DAT 810km", "Xử lý tình huống đèo dốc"],
+      specialties: ["Hạng B Số Sàn", "Hạng C", "DAT 810km", "Xử lý tình huống đèo dốc"],
       bio: "Kinh nghiệm dạn dày qua hàng chục nghìn km đường trường thực tế, rèn phản xạ lái xe an toàn trên cao tốc và quốc lộ.",
       teachingPhilosophy:
         "Tập trung rèn thói quen quan sát gương, giữ khoảng cách an toàn và xử lý phanh mượt mà.",
@@ -46,7 +46,7 @@ export const teachersData: TeachersSectionData = {
       title: "Giáo Viên Sa Hình & Xe Cảm Ứng Chip",
       experienceYears: 8,
       experienceText: "8 năm kinh nghiệm huấn luyện thi sát hạch",
-      specialties: ["Hạng B1", "Hạng B2", "Khắc phục lỗi đề-pa", "Ghép xe hẹp"],
+      specialties: ["Hạng B Tự Động", "Hạng B Số Sàn", "Khắc phục lỗi đề-pa", "Ghép xe hẹp"],
       bio: "Nắm rõ từng vị trí đặt điểm mốc trên các sân thi sát hạch chuẩn, giúp học viên luôn tự tin đạt 100/100 điểm sa hình.",
       teachingPhilosophy:
         "Phương pháp căn điểm chuẩn xác từng centimet, giải thích cặn kẽ vì sao trừ điểm để học viên tự sửa lỗi.",
@@ -61,8 +61,8 @@ export const teachersData: TeachersSectionData = {
       name: "Cô Hoàng Lan",
       title: "Giáo Viên Bổ Túc & Lái Xe Nữ Quyền",
       experienceYears: 7,
-      experienceText: "7 năm đào tạo xe tự động B1",
-      specialties: ["Hạng B1", "Lái xe phố đông", "Lùi chuồng hầm chung cư", "Tâm lý vững vàng"],
+      experienceText: "7 năm đào tạo xe B tự động",
+      specialties: ["Hạng B Tự Động", "Lái xe phố đông", "Lùi chuồng hầm chung cư", "Tâm lý vững vàng"],
       bio: "Được rất nhiều học viên nữ tin tưởng nhờ sự thấu hiểu tâm lý, hướng dẫn nhẹ nhàng, tỉ mỉ từng chi tiết nhỏ.",
       teachingPhilosophy:
         "Tạo không khí học tập thoải mái, không áp lực, giúp học viên gỡ bỏ hoàn toàn nỗi sợ lái xe.",

@@ -7,12 +7,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: `${siteConfig.shortName} - ${siteConfig.tagline}`,
-  description: `Trung tâm đào tạo lái xe chuyên nghiệp các hạng B1, B2, C. Hotline: ${siteConfig.contact.hotlineDisplay}, Tư vấn: ${siteConfig.contact.consultantName} (${siteConfig.contact.consultantPhoneDisplay}). Học thật, thi đỗ thật, cam kết không phát sinh chi phí, 1 kèm 1 với giáo viên giàu kinh nghiệm.`,
+  description: `Trung tâm đào tạo lái xe chuyên nghiệp các hạng B Tự Động, B Số Sàn, C. Hotline: ${siteConfig.contact.hotlineDisplay}, Tư vấn: ${siteConfig.contact.consultantName} (${siteConfig.contact.consultantPhoneDisplay}). Học thật, thi đỗ thật, cam kết không phát sinh chi phí, 1 kèm 1 với giáo viên giàu kinh nghiệm.`,
   keywords: [
     "học lái xe",
     "dạy lái xe",
-    "bằng lái B1",
-    "bằng lái B2",
+    "bằng lái B tự động",
+    "bằng lái B số sàn",
+    "bằng lái B",
     "bằng lái C",
     "bổ túc tay lái",
     "thầy dạy lái xe",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: siteConfig.brandName,
     title: `${siteConfig.shortName} - ${siteConfig.tagline}`,
-    description: `Đào tạo lái xe ô tô B1, B2, C chuẩn thực tế. Tỷ lệ đỗ >95%, giáo viên 1 kèm 1, xe máy lạnh đời mới, hỗ trợ học phí chia đợt linh hoạt. Hotline: ${siteConfig.contact.hotlineDisplay}.`,
+    description: `Đào tạo lái xe ô tô B Tự Động, B Số Sàn, C chuẩn thực tế. Tỷ lệ đỗ >95%, giáo viên 1 kèm 1, xe máy lạnh đời mới, hỗ trợ học phí chia đợt linh hoạt. Hotline: ${siteConfig.contact.hotlineDisplay}.`,
   },
   twitter: {
     card: "summary_large_image",

@@ -11,8 +11,8 @@ export const heroData: HeroData = {
   secondaryCtaText: "TikTok Thầy Toàn",
   secondaryCtaHref: "https://www.tiktok.com/@thaytoandaylai999?is_from_webapp=1&sender_device=pc",
   licensePills: [
-    { code: "B1", name: "Xe số tự động", target: "Gia đình, đi làm hàng ngày" },
-    { code: "B2", name: "Xe số sàn & tự động", target: "Kinh doanh, lái xe dịch vụ" },
+    { code: "B Tự Động", name: "Xe số tự động", target: "Gia đình, đi làm hàng ngày" },
+    { code: "B Số Sàn", name: "Xe số sàn & tự động", target: "Kinh doanh, lái xe dịch vụ" },
     { code: "C", name: "Xe tải > 3.5 tấn", target: "Tài xế chuyên nghiệp" },
   ],
   trustIndicators: [

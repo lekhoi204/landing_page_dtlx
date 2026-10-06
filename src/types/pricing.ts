@@ -1,9 +1,7 @@
-import { LicenseId } from "@/types/estimator";
-
 export interface PricingCourse {
   id: string;
   name: string;
-  licenseCode: LicenseId;
+  licenseCode: string;
   licenseName: string;
   vehicleType: string;
   tuition: number; // in VND

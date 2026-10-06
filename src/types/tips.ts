@@ -21,6 +21,10 @@ export interface VideoTip {
   summary: string;
   keySteps: string[];
   youtubeUrl: string;
+  videoSrc?: string; // e.g. "/videos/sa-hinh-thay-toan.mp4" for local video upload
+  tiktokVideoId?: string; // e.g. "7677388767237393684"
+  platform?: "tiktok" | "youtube" | "local";
+  author?: string;
   youtubeEmbedId?: string;
   viewsEstimate: string;
   isPlaceholder: boolean;

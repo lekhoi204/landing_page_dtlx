@@ -8,9 +8,9 @@ export const pricingData: PricingData = {
     "* Mức học phí trên là mức giá dự toán tham khảo trọn gói theo khung đào tạo chuẩn. Học viên có thể đóng làm 2 - 3 đợt linh hoạt. Vui lòng nhấn Đăng ký tư vấn hoặc liên hệ để nhận thông báo lịch thi và chính sách ưu đãi tuyển sinh mới nhất.",
   courses: [
     {
-      id: "course-b1",
-      name: "Khóa Học Bằng Lái B1",
-      licenseCode: "B1",
+      id: "course-b-auto",
+      name: "Khóa Học Bằng B (Số Tự Động)",
+      licenseCode: "B Tự Động",
       licenseName: "Số Tự Động (Dưới 9 chỗ)",
       vehicleType: "Xe ô tô số tự động 4 - 7 chỗ đời mới",
       tuition: 16500000,
@@ -31,12 +31,12 @@ export const pricingData: PricingData = {
         "Tự chọn lịch học: sáng, chiều, tối hoặc cuối tuần",
         "Hỗ trợ đóng học phí chia làm 2 - 3 đợt linh hoạt",
       ],
-      ctaText: "Đăng Ký Khóa B1",
+      ctaText: "Đăng Ký B Tự Động",
     },
     {
-      id: "course-b2",
-      name: "Khóa Học Bằng Lái B2",
-      licenseCode: "B2",
+      id: "course-b-manual",
+      name: "Khóa Học Bằng B (Số Sàn)",
+      licenseCode: "B Số Sàn",
       licenseName: "Số Sàn & Tự Động (Dưới 9 chỗ)",
       vehicleType: "Xe ô tô số sàn & số tự động < 3.5 tấn",
       tuition: 15500000,
@@ -57,7 +57,7 @@ export const pricingData: PricingData = {
         "Miễn phí học lý thuyết và phần mềm thi thử 120 tình huống",
         "Hỗ trợ thủ tục làm hồ sơ nhanh gọn",
       ],
-      ctaText: "Đăng Ký Khóa B2",
+      ctaText: "Đăng Ký B Số Sàn",
     },
     {
       id: "course-c",
@@ -96,7 +96,7 @@ export const pricingData: PricingData = {
       practiceHours: 24,
       duration: "2 - 2.5 tháng",
       targetAudience:
-        "Dành cho tài xế đã có bằng B2 (từ 5 năm kinh nghiệm) hoặc bằng C (từ 3 năm kinh nghiệm) cần nâng hạng lái xe khách.",
+        "Dành cho tài xế đã có bằng B số sàn (từ 5 năm kinh nghiệm) hoặc bằng C (từ 3 năm kinh nghiệm) cần nâng hạng lái xe khách.",
       isPopular: false,
       badge: "Nâng Hạng Bằng Lái",
       features: [

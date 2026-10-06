@@ -22,7 +22,7 @@ export const trainingGroundsData: TrainingGroundsData = {
       address: "Khu trung tâm sát hạch lái xe tiêu chuẩn Tổng Cục Đường Bộ",
       description:
         "Sân sát hạch chính thức với quy mô hơn 20.000m², đầy đủ 100% xe gắn chip cảm ứng điện tử chấm điểm tự động như ngày thi thật.",
-      supportedLicenses: ["B1", "B2", "C", "D"],
+      supportedLicenses: ["B Tự Động", "B Số Sàn", "C", "D"],
       standard: "Sân Sát Hạch Loại 1 Quốc Gia",
       features: [
         "100% xe gắn chip cảm ứng thi sát hạch",
@@ -42,7 +42,7 @@ export const trainingGroundsData: TrainingGroundsData = {
       address: "Trục đường lớn kết nối thuận tiện các quận phía Đông & Vành đai",
       description:
         "Sân tập rộng rãi 12.000m², cây xanh thoáng mát, mặt sân chuẩn độ dốc cầu thi, thuận tiện cho học viên khu vực phía Đông và lân cận.",
-      supportedLicenses: ["B1", "B2", "C"],
+      supportedLicenses: ["B Tự Động", "B Số Sàn", "C"],
       standard: "Sân Sa Hình Chuẩn 11 Bài Thi",
       features: [
         "Mô hình dốc cầu đề-pa chuẩn kích thước thi",
@@ -62,8 +62,8 @@ export const trainingGroundsData: TrainingGroundsData = {
       address: "Gần trục đại lộ lớn phía Tây, giao thông thông thoáng",
       description:
         "Sân tập hiện đại, xe tập lái 100% đời mới (Vios, Accent), đội ngũ giáo viên túc trực hướng dẫn từng bài sa hình khó.",
-      supportedLicenses: ["B1", "B2"],
-      standard: "Sân Tập Chuẩn B1 - B2",
+      supportedLicenses: ["B Tự Động", "B Số Sàn"],
+      standard: "Sân Tập Chuẩn B Số Sàn & Tự Động",
       features: [
         "Đầy đủ bài vệt bánh xe và đường vuông góc",
         "Xe tập đời mới trang bị máy lạnh mát rượi",
@@ -72,7 +72,7 @@ export const trainingGroundsData: TrainingGroundsData = {
       ],
       googleMapsUrl: "https://maps.google.com/?q=San+Tap+Lai+Xe+Phia+Tay",
       hasVirtualTour: false,
-      imagePlaceholderText: "Sân tập B1 - B2 Phía Tây xe đời mới",
+      imagePlaceholderText: "Sân tập B Số Sàn & Tự Động Phía Tây xe đời mới",
       isPlaceholder: true,
     },
     {
@@ -82,7 +82,7 @@ export const trainingGroundsData: TrainingGroundsData = {
       address: "Khu đô thị mới phía Nam, đường vào rộng rãi 4 làn xe",
       description:
         "Sân tập mới nâng cấp mặt thảm nhựa tiêu chuẩn cao, vạch sơn căn điểm rõ ràng, không khí trong lành, thuận tiện di chuyển.",
-      supportedLicenses: ["B1", "B2"],
+      supportedLicenses: ["B Tự Động", "B Số Sàn"],
       standard: "Sân Tập Sa Hình Thảm Nhựa Mới",
       features: [
         "Mặt sân thảm nhựa êm ái, bám đường tốt",

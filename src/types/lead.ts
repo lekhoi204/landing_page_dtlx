@@ -1,7 +1,7 @@
 export interface LeadFormData {
   fullName: string;
   phone: string;
-  licenseInterest?: string; // Optional: "B1", "B2", "C", "Bổ túc"
+  licenseInterest?: string; // Optional: "Hạng B (Tự động)", "Hạng B (Số sàn)", "C", "Bổ túc"
   preferredTime?: string; // Optional
   source?: string;
   submittedAt?: string;

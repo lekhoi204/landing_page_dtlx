@@ -14,20 +14,35 @@ import {
 
 interface VideoCardProps {
   tip: VideoTip;
+  onPlay?: (tip: VideoTip) => void;
   className?: string;
 }
 
-export function VideoCard({ tip, className }: VideoCardProps) {
+export function VideoCard({ tip, onPlay, className }: VideoCardProps) {
+  const isTikTok =
+    tip.platform === "tiktok" || tip.youtubeUrl?.includes("tiktok.com");
+
+  const handlePlayClick = (e: React.MouseEvent) => {
+    if (onPlay) {
+      e.preventDefault();
+      onPlay(tip);
+    }
+  };
+
   return (
     <div
       className={cn(
         "rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md hover:border-brand-300 transition-all duration-200 overflow-hidden flex flex-col justify-between group",
+        isTikTok && "hover:border-rose-300",
         className
       )}
     >
       <div>
         {/* Visual Thumbnail Area with Play Button */}
-        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-brand-950 p-6 sm:p-7 text-white overflow-hidden aspect-video flex flex-col justify-between">
+        <div
+          onClick={handlePlayClick}
+          className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-brand-950 p-6 sm:p-7 text-white overflow-hidden aspect-video flex flex-col justify-between cursor-pointer"
+        >
           <div
             className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:20px_20px] opacity-15"
             aria-hidden="true"
@@ -39,22 +54,32 @@ export function VideoCard({ tip, className }: VideoCardProps) {
               {tip.categoryLabel}
             </span>
 
-            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-200 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-xs">
-              <Clock className="w-3 h-3 text-amber-400" />
-              {tip.duration}
-            </span>
+            {isTikTok ? (
+              <span className="inline-flex items-center gap-1 text-[11px] font-bold text-rose-300 bg-rose-950/80 border border-rose-500/40 px-2.5 py-1 rounded-md backdrop-blur-xs">
+                <span>🎵</span> TikTok Thầy Toàn
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-200 bg-black/40 px-2.5 py-1 rounded-md backdrop-blur-xs">
+                <Clock className="w-3 h-3 text-amber-400" />
+                {tip.duration}
+              </span>
+            )}
           </div>
 
           {/* Center Play Icon Button */}
-          <a
-            href={tip.youtubeUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10 mx-auto w-14 h-14 rounded-full bg-accent-500 hover:bg-accent-600 text-white flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-all duration-200"
+          <button
+            type="button"
+            onClick={handlePlayClick}
+            className={cn(
+              "relative z-10 mx-auto w-14 h-14 rounded-full text-white flex items-center justify-center shadow-lg group-hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer",
+              isTikTok
+                ? "bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 shadow-rose-950/50"
+                : "bg-accent-500 hover:bg-accent-600 shadow-brand-950/50"
+            )}
             aria-label={`Xem video bài giảng: ${tip.title}`}
           >
             <Play className="w-6 h-6 fill-white translate-x-0.5" />
-          </a>
+          </button>
 
           {/* Bottom Views Counter */}
           <div className="relative z-10 flex items-center justify-between text-[11px] text-slate-300">
@@ -70,7 +95,10 @@ export function VideoCard({ tip, className }: VideoCardProps) {
 
         {/* Card Body */}
         <div className="p-5 sm:p-6 space-y-3.5">
-          <h4 className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-brand-600 transition-colors">
+          <h4
+            onClick={handlePlayClick}
+            className="text-base sm:text-lg font-bold text-slate-900 leading-snug group-hover:text-brand-600 transition-colors cursor-pointer"
+          >
             {tip.title}
           </h4>
 
@@ -96,15 +124,28 @@ export function VideoCard({ tip, className }: VideoCardProps) {
 
       {/* Card Footer */}
       <div className="p-5 sm:p-6 pt-0 border-t border-slate-100 flex items-center justify-between gap-3">
-        <a
-          href={tip.youtubeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-600 hover:text-brand-800 hover:underline py-1"
+        <button
+          type="button"
+          onClick={handlePlayClick}
+          className={cn(
+            "inline-flex items-center gap-1.5 text-xs font-semibold hover:underline py-1 transition-colors cursor-pointer",
+            isTikTok
+              ? "text-rose-600 hover:text-rose-800"
+              : "text-brand-600 hover:text-brand-800"
+          )}
         >
-          <span>Xem trên YouTube</span>
-          <ExternalLink className="w-3 h-3 text-slate-400" />
-        </a>
+          {isTikTok ? (
+            <>
+              <span>🎵 Xem video trực tiếp</span>
+              <Play className="w-3 h-3 text-rose-500 fill-rose-500" />
+            </>
+          ) : (
+            <>
+              <span>Xem video</span>
+              <Play className="w-3 h-3 text-brand-500 fill-brand-500" />
+            </>
+          )}
+        </button>
 
         <Button
           variant="outline"

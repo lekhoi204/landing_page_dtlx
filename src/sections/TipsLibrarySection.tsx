@@ -11,8 +11,11 @@ import { cn } from "@/lib/utils";
 import { BookOpen, Sparkles, ArrowRight, PlayCircle, Video } from "lucide-react";
 import { siteConfig } from "@/data/siteConfig";
 
+import { VideoModal } from "@/components/ui/VideoModal";
+
 export function TipsLibrarySection() {
   const [activeCategory, setActiveCategory] = useState<TipCategoryId>("all");
+  const [selectedTip, setSelectedTip] = useState<any | null>(null);
 
   const filteredTips =
     activeCategory === "all"
@@ -61,9 +64,20 @@ export function TipsLibrarySection() {
         {/* Tips Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
           {filteredTips.map((tip) => (
-            <VideoCard key={tip.id} tip={tip} />
+            <VideoCard
+              key={tip.id}
+              tip={tip}
+              onPlay={(t) => setSelectedTip(t)}
+            />
           ))}
         </div>
+
+        {/* Video Modal Player (Plays directly on web!) */}
+        <VideoModal
+          isOpen={Boolean(selectedTip)}
+          tip={selectedTip}
+          onClose={() => setSelectedTip(null)}
+        />
 
         {/* TikTok Channel Banner & 1-on-1 Callout */}
         <div className="mt-12 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-6">

@@ -103,7 +103,7 @@ export function Footer() {
               <div className="pt-2 text-xs space-y-2 text-slate-300">
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>Khai giảng liên tục hàng tháng các hạng B1, B2, C</span>
+                  <span>Khai giảng liên tục hàng tháng các hạng B Tự Động, B Số Sàn, C</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-brand-400" />
@@ -124,7 +124,7 @@ export function Footer() {
                     className="hover:text-brand-400 transition-colors flex items-center gap-1.5 py-1"
                   >
                     <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-                    <span>Học lái xe B1 tự động (Không kinh doanh)</span>
+                    <span>Học lái xe B tự động (Gia đình, công sở)</span>
                   </a>
                 </li>
                 <li>
@@ -133,7 +133,7 @@ export function Footer() {
                     className="hover:text-brand-400 transition-colors flex items-center gap-1.5 py-1"
                   >
                     <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
-                    <span>Học lái xe B2 số sàn (Kinh doanh vận tải)</span>
+                    <span>Học lái xe B số sàn (Đa dụng & Kinh doanh)</span>
                   </a>
                 </li>
                 <li>
