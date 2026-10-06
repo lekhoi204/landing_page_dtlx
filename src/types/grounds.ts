@@ -8,6 +8,7 @@ export interface TrainingGround {
   standard: string; // e.g. "Sân chuẩn sa hình 11 bài", "Sân sát hạch loại 1"
   features: string[]; // ["Xe gắn chip chấm điểm", "Đèn chiếu sáng ban đêm", "Đón tận nơi"]
   googleMapsUrl: string;
+  embedMapUrl?: string;
   hasVirtualTour?: boolean;
   videoUrl?: string;
   imagePlaceholderText: string;

@@ -12,6 +12,7 @@ import {
   CheckCircle2,
   ChevronRight,
   Sparkles,
+  MapPin,
 } from "lucide-react";
 
 export function Footer() {
@@ -112,9 +113,11 @@ export function Footer() {
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   <span>Khai giảng liên tục hàng tháng các hạng B Tự Động, B Số Sàn, C</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-brand-400" />
-                  <span>Sân tập chuẩn sát hạch có xe gắn chip thi thử</span>
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0 mt-0.5" />
+                  <span>
+                    Sân tập: <strong>Trung Tâm GDNN Tư Thục Mỹ Phước</strong> - Đường Thới Hòa 29, KP Đông Hòa, Thới Hòa, Hồ Chí Minh
+                  </span>
                 </div>
               </div>
             </div>

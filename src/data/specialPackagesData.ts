@@ -1,12 +1,12 @@
 import { SpecialPackagesData } from "@/types/specialPackages";
 
 export const specialPackagesData: SpecialPackagesData = {
-  badge: "Dịch Vụ Đào Tạo Cao Cấp",
-  title: "Gói Dịch Vụ Đào Tạo Đưa Đón Tận Nhà",
+  badge: "Dịch Vụ Đào Tạo Đặc Biệt",
+  title: "Các Gói Dịch Vụ Đào Tạo Cá Nhân Hóa",
   description:
-    "Giải pháp đào tạo cá nhân hóa tiện lợi giúp học viên tiết kiệm tối đa thời gian di chuyển: Giáo viên đón tận nơi theo đúng lịch hẹn của bạn.",
+    "Được thiết kế chuyên biệt để đáp ứng tối đa nhu cầu của từng nhóm học viên: từ dịch vụ đưa đón tại nhà tiện lợi đến chương trình học riêng biệt cùng nữ giáo viên tận tâm.",
   assuranceNote:
-    "Gói dịch vụ đặc biệt được cam kết rõ ràng trong hợp đồng đào tạo, đảm bảo chuẩn số giờ thực hành và tỷ lệ đỗ cao nhất.",
+    "Mọi gói dịch vụ đặc biệt đều được cam kết rõ ràng trong hợp đồng đào tạo, đảm bảo chuẩn số giờ thực hành và tỷ lệ đỗ cao nhất.",
   packages: [
     {
       id: "pkg-door-to-door",
@@ -30,6 +30,30 @@ export const specialPackagesData: SpecialPackagesData = {
       ctaText: "Đăng Ký Gói Đưa Đón Tận Nhà",
       themeColor: "brand",
       icon: "MapPinHouse",
+      isPlaceholder: false,
+    },
+    {
+      id: "pkg-female-instructor",
+      code: "female_instructor",
+      title: "Gói Học Kèm 1-1 Cùng Nữ Giáo Viên",
+      badge: "Nhẹ Nhàng & Thấu Hiểu Tâm Lý",
+      tagline: "Không gian học thoải mái, tỉ mỉ, kiên nhẫn - Tuyệt đối không quát mắng",
+      description:
+        "Chương trình đào tạo được thiết kế dành riêng cho phái nữ: Được kèm cặp trực tiếp bởi các nữ giáo viên chuẩn sư phạm của trung tâm, giúp gỡ bỏ hoàn toàn tâm lý lo lắng sau vô lăng.",
+      targetAudience:
+        "Dành cho chị em phụ nữ, học viên nữ mới bắt đầu, người hay bị hồi hộp, giật mình hoặc muốn học cùng cô giáo hướng dẫn nhẹ nhàng, tỉ mỉ.",
+      highlights: [
+        "100% giáo viên nữ có chứng chỉ sư phạm dạy nghề của Sở GTVT",
+        "Hướng dẫn nhẹ nhàng, kiên nhẫn, điềm tĩnh, chia sẻ kinh nghiệm lái xe an toàn cho phái nữ",
+        "Phương pháp căn lề, chỉnh gương, cảm nhận chân ga chân phanh cực kỳ tỉ mỉ và dễ nhớ",
+        "Rèn thói quen chống nhầm chân ga - chân phanh và xử lý các tình huống bất ngờ",
+        "Luyện kỹ năng lùi xe hầm chung cư, ghép xe phố đông và ghé trung tâm mua sắm",
+      ],
+      vehicleNote: "Xe số tự động đời mới, trang bị máy lạnh, tay lái trợ lực điện êm ái",
+      pricingEstimateNote: "Học phí tương đương gói chuẩn - Không phụ thu thêm phí",
+      ctaText: "Đăng Ký Học Với Nữ Giáo Viên",
+      themeColor: "rose",
+      icon: "UserHeart",
       isPlaceholder: false,
     },
   ],

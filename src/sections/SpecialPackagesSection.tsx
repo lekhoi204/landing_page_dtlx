@@ -22,8 +22,8 @@ export function SpecialPackagesSection() {
           align="center"
         />
 
-        {/* Special Package Card (Door-to-Door Service) */}
-        <div className="max-w-2xl mx-auto">
+        {/* 2 Special Packages Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
           {specialPackagesData.packages.map((pkg) => (
             <SpecialPackageCard key={pkg.id} pkg={pkg} />
           ))}
