@@ -38,31 +38,39 @@ export function TipsLibrarySection() {
           align="center"
         />
 
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          {tipsData.categories.map((cat) => {
-            const isActive = activeCategory === cat.id;
-            return (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => setActiveCategory(cat.id)}
-                className={cn(
-                  "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer select-none",
-                  "focus-visible:outline-2 focus-visible:outline-brand-600 focus-visible:outline-offset-2",
-                  isActive
-                    ? "bg-brand-600 text-white shadow-sm"
-                    : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80"
-                )}
-              >
-                {cat.label}
-              </button>
-            );
-          })}
-        </div>
+        {/* Category Filter Tabs (Only show if multiple categories/videos) */}
+        {tipsData.categories.length > 2 && (
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+            {tipsData.categories.map((cat) => {
+              const isActive = activeCategory === cat.id;
+              return (
+                <button
+                  key={cat.id}
+                  type="button"
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={cn(
+                    "px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-150 cursor-pointer select-none",
+                    "focus-visible:outline-2 focus-visible:outline-brand-600 focus-visible:outline-offset-2",
+                    isActive
+                      ? "bg-brand-600 text-white shadow-sm"
+                      : "bg-white text-slate-700 hover:bg-slate-100 border border-slate-200/80"
+                  )}
+                >
+                  {cat.label}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
-        {/* Tips Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
+        {/* Tips Video Grid / Centered Card for single video */}
+        <div
+          className={cn(
+            filteredTips.length === 1
+              ? "max-w-xl mx-auto"
+              : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch"
+          )}
+        >
           {filteredTips.map((tip) => (
             <VideoCard
               key={tip.id}
